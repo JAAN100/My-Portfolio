@@ -62,6 +62,7 @@ export default function ProjectsSection() {
 
     return (
         <SectionShell
+            id="work"
             label="Work"
             title="Selected projects."
             kicker="From multi-vendor e-commerce to client websites and full-stack apps. Click any project for details, tech, and links."

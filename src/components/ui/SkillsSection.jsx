@@ -5,7 +5,7 @@ import { content } from "@/data/content";
 // this is the accessible, semantic list of capabilities.
 export default function SkillsSection() {
     return (
-        <SectionShell label="Skills" title="The stack I ship with.">
+        <SectionShell id="skills" label="Skills" title="The stack I ship with.">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {content.skills.map((group) => (
                     <div key={group.group} className="glass rounded-lg p-6">

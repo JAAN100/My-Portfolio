@@ -7,6 +7,7 @@ import { content } from "@/data/content";
 export default function ContactSection() {
     return (
         <SectionShell
+            id="contact"
             label="Contact"
             title="Let's build something."
             kicker="Have a project, a site that needs maintaining or an IT problem to solve? Send a message or reach me directly."

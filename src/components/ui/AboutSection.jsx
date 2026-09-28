@@ -4,7 +4,7 @@ import { content } from "@/data/content";
 // About station: bio panel + floating stats card.
 export default function AboutSection() {
     return (
-        <SectionShell label="About" title="Bridging infrastructure and experience.">
+        <SectionShell id="about" label="About" title="Bridging infrastructure and experience.">
             <div className="grid gap-10 md:grid-cols-5">
                 <p className="md:col-span-3 text-slate-300 leading-relaxed text-lg">{content.about.bio}</p>
                 <div className="md:col-span-2 grid grid-cols-2 gap-4 self-start">

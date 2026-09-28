@@ -14,6 +14,7 @@ const ICONS = {
 export default function ServicesSection() {
     return (
         <SectionShell
+            id="services"
             label="Services"
             title="What I build and what I keep running."
             kicker="Two sides of one business: modern web design & development, and the IT management that hosts, secures, and maintains it."
