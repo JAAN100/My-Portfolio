@@ -47,34 +47,6 @@ function Poly({ position, color = CYAN }) {
 // Station clusters distributed along the camera path (z axis).
 const STATIONS = [
     {
-        z: -12, items: [
-            <Monitor key="m1" position={[-3, 1, 0]} color={CYAN} />,
-            <Ring key="r1" position={[3, -0.5, -1]} color={COBALT} />,
-            <Poly key="p1" position={[0, 1.5, -2]} />,
-        ]
-    },
-    {
-        z: -24, items: [
-            <Monitor key="m2" position={[3, 0.5, 0]} rotation={[0, -0.4, 0]} color={COBALT} />,
-            <Poly key="p2" position={[-3, -0.5, -1]} color={COBALT} />,
-            <Ring key="r2" position={[0, 1.5, -2]} scale={0.7} />,
-        ]
-    },
-    {
-        z: -36, items: [
-            <Monitor key="m3" position={[-3, -0.5, 0]} rotation={[0, 0.4, 0]} />,
-            <Monitor key="m4" position={[3, 1, -2]} color={COBALT} />,
-            <Poly key="p3" position={[0, -1.5, -1]} />,
-        ]
-    },
-    {
-        z: -48, items: [
-            <Ring key="r3" position={[-3, 0.5, 0]} scale={1.1} color={CYAN} />,
-            <Poly key="p4" position={[3, -0.5, -1]} color={COBALT} />,
-            <Monitor key="m5" position={[0, 1.5, -2]} color={CYAN} />,
-        ]
-    },
-    {
         z: -60, items: [
             <Poly key="p5" position={[-3, 0.8, 0]} />,
             <Ring key="r4" position={[3, -0.5, -1]} scale={0.8} color={COBALT} />,

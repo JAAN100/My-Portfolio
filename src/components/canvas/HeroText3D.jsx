@@ -4,19 +4,92 @@ import { Text, Float } from "@react-three/drei";
 // The name also exists as a visually-hidden <h1> in the HTML overlay for screen readers.
 export default function HeroText3D() {
     return (
-        <group position={[0, 0, 0]}>
-            <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
-                <Text
-                    fontSize={0.18}
-                    letterSpacing={0.18}
-                    anchorX="center"
-                    anchorY="middle"
-                    position={[0, -0.45, 0]}
-                >
-                    FULL-STACK · WEB DESIGN · IT
-                    <meshBasicMaterial color="#94A3B8" toneMapped={false} />
-                </Text>
-            </Float>
-        </group>
+        <>
+            <group position={[0, 0, 0]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        FULL-STACK · WEB DESIGN · IT
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+            <group position={[0, 0.6, -3]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        ABOUT
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+            <group position={[0, 0.64, -12]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        SKILLS
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+            <group position={[0, 0.65, -18]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        WORK
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+            <group position={[0, 0.49, -35]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        SERVICES
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+            <group position={[0, 0.49, -53]}>
+                <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
+                    <Text
+                        fontSize={0.18}
+                        letterSpacing={0.18}
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, -0.45, 0]}
+                    >
+                        CONTACT
+                        <meshBasicMaterial color="#94A3B8" toneMapped={false} />
+                    </Text>
+                </Float>
+            </group>
+
+        </>
     );
 }

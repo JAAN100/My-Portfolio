@@ -3,10 +3,10 @@
 
 export const content = {
   name: "Hassan Jaan",
-  role: "Full-Stack AI Engineer · Web Designer · IT Management Founder",
+  role: "Full-Stack AI Engineer · UI-UX Designer",
   // Tagline shown in the hero overlay.
   tagline:
-    "I architect and build fast, modern websites and web apps for businesses and run an IT management business that keeps them fast, secure and online.",
+    "I architect and build fast, modern websites and web apps for businesses to keep them secure fast and online.",
   // Contact email (update to your real address). The form uses EmailJS, so this is for the mailto link.
   email: "hassan.jan.solo@gmail.com",
   socials: {
@@ -15,7 +15,7 @@ export const content = {
   },
 
   about: {
-    bio: "I'm Hassan Jaan a full-stack engineer. I build production-grade web apps with React, Node and modern tooling and I help businesses manage their infrastructure deployments and digital presence end to end. From a single landing page to a multi-vendor e-commerce platform, I handle design, development, and the servers it all runs on.",
+    bio: "I'm Hassan Jaan a full-stack engineer. I build production-grade web apps with React, Node and modern tooling and I help businesses deploy their and digital presence end to end. From a single landing page to a multi-vendor e-commerce platform, I handle UI/UX, development and servers it all runs on.",
     stats: [
       { label: "Projects Delivered", value: "12" },
       { label: "Client Websites", value: "10+" },
@@ -37,8 +37,21 @@ export const content = {
       ],
     },
     { group: "Backend", items: ["Node.js / Express", "PHP"] },
-    { group: "Databases", items: ["MongoDB", "MySQL", "SQL / NoSQL"] },
-    { group: "Deployment", items: ["Vercel", "cPanel", "AWS", "AZURE", "GCP"] },
+    {
+      group: "Databases",
+      items: [
+        "MongoDB",
+        "MySQL",
+        "SQL / NoSQL",
+        "PostgreSQL",
+        "MSSQL Server",
+        "MariaDB",
+      ],
+    },
+    {
+      group: "Platforms",
+      items: ["Vercel", "cPanel", "AWS", "AZURE", "GCP", "Plesk"],
+    },
   ],
 
   // Projects. Use "[LIVE_URL]" / "[GITHUB_URL]" placeholders where a link is not yet known.
@@ -161,7 +174,7 @@ export const content = {
       ],
     },
     {
-      category: "IT Management",
+      category: "Development",
       items: [
         {
           title: "Managed IT Support",

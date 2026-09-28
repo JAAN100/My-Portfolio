@@ -67,7 +67,7 @@ export default function Portfolio() {
 
             <footer className="relative z-10 border-t border-white/10 px-6 sm:px-10 lg:px-24 py-10">
                 <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-                    <p>{content.name}. All rights reserved.</p>
+                    <p>©2024 - {new Date().getFullYear() < 2028 ? 2028 : new Date().getFullYear()} {content.name}. All rights reserved.</p>
                     <div className="flex items-center gap-4">
                         <a href="https://www.linkedin.com/in/hassan-jaan/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
                             <Linkedin className="h-5 w-5" />

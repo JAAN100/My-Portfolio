@@ -10,7 +10,7 @@ export default function ContactSection() {
             id="contact"
             label="Contact"
             title="Let's build something."
-            kicker="Have a project, a site that needs maintaining or an IT problem to solve? Send a message or reach me directly."
+            kicker="Have a project, a site that needs maintaining or built from scratch? Send a message or reach me directly."
         >
             <div className="grid gap-8 lg:grid-cols-2">
                 <ContactForm />
