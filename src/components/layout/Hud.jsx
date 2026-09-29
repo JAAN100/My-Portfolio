@@ -18,6 +18,16 @@ export default function Hud() {
     const { scrollYProgress } = useScroll();
     const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
+    const handleMobileNavClick = (event, href) => {
+        event.preventDefault();
+        setOpen(false);
+
+        requestAnimationFrame(() => {
+            document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.history.pushState(null, "", href);
+        });
+    };
+
     return (
         <header className="fixed top-0 inset-x-0 z-40">
             {/* Scroll progress bar */}
@@ -72,7 +82,7 @@ export default function Hud() {
                                 <a
                                     key={n.href}
                                     href={n.href}
-                                    onClick={() => setOpen(false)}
+                                    onClick={(event) => handleMobileNavClick(event, n.href)}
                                     className="font-mono text-xs tracking-wider uppercase text-slate-300 hover:text-cyan-400 transition"
                                 >
                                     {n.label}
