@@ -1,4 +1,5 @@
 {
+  "home" : "https://github.com/JAAN100/My-Portfolio",
   "name": "base44-app",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +10,8 @@
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc -p ./jsconfig.json",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@base44/sdk": "^0.8.51",
@@ -56,6 +58,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^11.16.4",
+    "gh-pages": "^6.3.0",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
     "jspdf": "^4.2.1",
