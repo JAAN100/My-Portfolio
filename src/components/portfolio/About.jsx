@@ -12,7 +12,7 @@ export default function About() {
                 <Reveal>
                     <SectionHeading
                         eyebrow="About"
-                        title="A developer who also runs the IT side"
+                        title="A developer who also handles DevOps and cloud infrastructure"
                         align="left"
                     />
                 </Reveal>
