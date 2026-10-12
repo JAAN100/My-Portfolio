@@ -2,35 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#020617" />
-    <title>Hassan Jaan — Full-Stack Developer & Web Designer</title>
+
+    <title>Hassan Jaan — Full-Stack Developer &amp; Web Designer</title>
     <meta
       name="description"
-      content="Hassan Jaan — full-stack developer and web designer, founder of an IT management business. I design and build fast, modern websites and web apps, and keep them running."
+      content="Hassan Jaan is a full-stack developer and web designer building fast, clean, client-ready websites and web apps with React, Node.js and Tailwind CSS — plus hosting and IT management for growing businesses."
     />
     <meta name="author" content="Hassan Jaan" />
-    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FBF9F5" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hassan Jaan — Full-Stack Developer & Web Designer" />
-    <meta property="og:description" content="Immersive 3D portfolio of Hassan Jaan — full-stack developer, web designer, and IT management founder." />
-    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:title" content="Hassan Jaan — Full-Stack Developer &amp; Web Designer" />
+    <meta
+      property="og:description"
+      content="Fast, clean, client-ready websites and web apps — from pixel-tight frontends to the databases behind them."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Hassan Jaan — Full-Stack Developer &amp; Web Designer" />
+    <meta
+      name="twitter:description"
+      content="Fast, clean, client-ready websites and web apps — from pixel-tight frontends to the databases behind them."
+    />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hassan Jaan — Full-Stack Developer & Web Designer" />
-    <meta name="twitter:description" content="Full-stack developer, web designer, and IT management founder." />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/HJ.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("hj-theme");
+          document.documentElement.classList.toggle("dark", saved === "dark");
+        } catch (e) {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

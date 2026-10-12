@@ -1,90 +1,62 @@
-# Hassan Jaan — 3D Portfolio
+# Base44 Project
 
-An immersive, production-ready 3D personal portfolio for a full-stack developer, web designer, and IT management founder. A single continuous Three.js "developer workspace in space" scene moves the camera along a scroll-driven path; each portfolio section is a "station" the camera arrives at, with accessible HTML overlays on top.
+Use this repository to run and edit the app locally, then publish changes back through Base44.
 
-## Stack
+Any change pushed to the repo will also be reflected in the Base44 Builder.
 
-- React + Vite, Tailwind CSS
-- Three.js via `@react-three/fiber` + `@react-three/drei`
-- `framer-motion` for UI motion
-- Contact form via EmailJS (client-side), with a simulated-send fallback when env vars are missing
-- Plain JavaScript (no TypeScript)
+## Prerequisites
 
-## Features
+1. Clone the repository using the project's Git URL.
+2. Navigate to the project directory.
+3. Install dependencies: `npm install`.
+4. Install the Base44 CLI: `npm install -g base44@latest`.
+5. Install [Deno](https://docs.deno.com/runtime/getting_started/installation/) — the local Base44 backend runs on it.
 
-- Scroll-driven 3D camera path through a dark, futuristic space workspace (procedural geometry — no large model files)
-- Stations: Hero (3D name), About, Skills, Projects, Services, Contact
-- Project cards with hover tilt and a detail modal (description, features, tech, role, live + GitHub links)
-- Working EmailJS contact form with success/error states and demo fallback
-- Fully responsive; mobile/low-power devices fall back to a lighter scene (fewer particles, no parallax, capped DPR)
-- Respects `prefers-reduced-motion`: replaces the canvas with a static gradient and uses a simple scrolling layout
-- Accessibility: skip link, semantic HTML, keyboard navigation, visible focus rings, screen-reader-friendly name, alt/aria on the modal
-- SEO: title, meta description, Open Graph + Twitter tags, favicon
-- All content lives in `src/data/content.js` — edit bio, skills, projects, services, and links there without touching components
+Run `base44 --help` (or see the [CLI reference](https://docs.base44.com/developers/references/cli/commands/introduction)) for the full command surface.
 
-## Project structure
+## Run Locally
 
-```
-public/
-  .htaccess            # cPanel SPA rewrites
-  favicon.svg
-src/
-  components/
-    canvas/            # R3F scene (Scene, Starfield, HeroText3D, AmbientShapes)
-    ui/                # Framer Motion overlays + sections + modal + form
-    layout/            # HUD navigation
-  data/content.js      # Single source of truth for all content
-  hooks/               # usePrefersReducedMotion, usePerformanceTier
-  pages/Portfolio.jsx
-  App.jsx
-  index.css
-index.html
-.env.example
-vercel.json
-```
-
-## Local development
+Three commands, from the project root:
 
 ```bash
-npm install
-npm run dev
+base44 login   # one-time per machine
+base44 link    # one-time per clone
+base44 dev     # local backend + frontend together
 ```
 
-## Environment variables
+Open the frontend URL that `base44 dev` prints (typically `http://localhost:5173`).
 
-Copy `.env.example` to `.env` and fill in your EmailJS keys:
+Notes:
 
-```
-VITE_EMAILJS_SERVICE_ID=...
-VITE_EMAILJS_TEMPLATE_ID=...
-VITE_EMAILJS_PUBLIC_KEY=...
-```
+- **Every fresh clone needs `base44 link`.** It writes `base44/.app.jsonc` (the app-id pointer), which is deliberately gitignored. Your app id is in the Builder URL (`app.base44.com/apps/<id>/...`); `base44 link --help` shows the non-interactive flags.
+- **`base44 dev` runs the frontend for you** (via `site.serveCommand` in this repo's `base44/config.jsonc`) — never run `npm run dev` yourself: alone it serves a UI with no backend behind it (`[base44] Proxy not enabled`, every `/api` call fails), and alongside `base44 dev` the second Vite silently takes the next port and you end up looking at the wrong one.
+- **The app must be published at least once for the UI to load under `base44 dev`.** The frontend boots by fetching app settings from the hosted app; before the first publish that fails and every page redirects to login. The local API works regardless.
+- Entities, functions, and auth run locally — entity data is **in-memory only**, wiped when `base44 dev` restarts. Everything else (Core integrations, OAuth login) is forwarded to your deployed app. Full breakdown: [Local development overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview).
 
-If these are unset, the contact form runs in simulated-send mode (it logs the message and shows success, but no email is sent).
+## Frontend Only, Hosted Backend
 
-## Build
+To work on just the frontend against your app's live hosted backend:
 
 ```bash
-npm run build      # outputs to dist/
-npm run preview    # preview the production build locally
+base44 dev --remote
 ```
 
-## Deploy
+⚠️ In this mode writes go to your app's **production data** — plain `base44 dev` keeps everything local.
 
-### Vercel
+## Publish Your Changes
 
-1. Push the repo to GitHub and import it into Vercel (auto-detects Vite).
-2. Add the three `VITE_EMAILJS_*` env vars in Project → Settings → Environment Variables.
-3. `vercel.json` is included for framework detection and SPA rewrites.
+After pushing your changes to git, open the Base44 dashboard and publish the app:
 
-### cPanel / shared hosting (no Node server)
+```bash
+base44 dashboard open
+```
 
-1. Run `npm run build`.
-2. Upload everything inside `dist/` to your `public_html/` directory.
-3. Upload `public/.htaccess` to `public_html/.htaccess` (SPA rewrites for React Router).
+This repo syncs to Base44 through git, so publish from the dashboard rather than `base44 deploy` — a CLI deploy ships your local tree directly, bypassing the sync, and the deployed state silently diverges from the repo.
 
-## Editing content
+## Docs & Support
 
-Open `src/data/content.js` and update `name`, `tagline`, `email`, `about`, `skills`, `projects`, `services`, and `socials`. Replace `[LIVE_URL]`, `[GITHUB_URL]`, and `[PLACEHOLDER]` values with real data. No component changes required.
+GitHub integration: [https://docs.base44.com/developers/app-code/local-development/github](https://docs.base44.com/developers/app-code/local-development/github)
 
-> Note: This project is built on the Base44 platform, which handles hosting automatically. The `vercel.json` and `.htaccess` files are included for standalone export/deployment to Vercel or cPanel as requested.
+Local development: [https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview)
+
+Support: [https://app.base44.com/support](https://app.base44.com/support)

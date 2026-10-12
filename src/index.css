@@ -3,107 +3,204 @@
 @tailwind utilities;
 
 @layer base {
+  /* ---------------------------------------------------------------
+     Paper & Ink — warm paper, ink text, one burnt-orange accent.
+     Flat panels, 1px hairlines, no glass, no blur, no glow.
+     --------------------------------------------------------------- */
   :root {
-    /* Obsidian Architecture palette */
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 187 95% 43%;          /* Cyan Pulse #06B6D4 */
-    --primary-foreground: 222 84% 5%;
-    --secondary: 217 91% 60%;        /* Electric Cobalt #3B82F6 */
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 30% 12%;
-    --muted-foreground: 215 16% 65%;
-    --accent: 217 91% 60%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 80% 55%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 16%;
-    --input: 222 30% 16%;
-    --ring: 187 95% 43%;
-    --chart-1: 187 95% 43%;
-    --chart-2: 217 91% 60%;
-    --chart-3: 280 65% 60%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 340 75% 55%;
+    --background: 40 43% 97%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 17 88% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 32% 93%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 35 32% 93%;
+    --muted-foreground: 27 7% 45%;
+    --accent: 35 37% 90%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 20% 84%;
+    --input: 35 20% 84%;
+    --ring: 17 88% 40%;
+    --chart-1: 17 88% 40%;
+    --chart-2: 35 32% 58%;
+    --chart-3: 27 7% 45%;
+    --chart-4: 0 0% 20%;
+    --chart-5: 17 45% 62%;
     --radius: 0.75rem;
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 40 43% 97%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 17 88% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 32% 93%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 35 20% 84%;
+    --sidebar-ring: 17 88% 40%;
 
-    --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-    --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 215 16% 65%;
-    --sidebar-primary: 187 95% 43%;
-    --sidebar-primary-foreground: 222 84% 5%;
-    --sidebar-accent: 222 30% 12%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 16%;
-    --sidebar-ring: 187 95% 43%;
+    --paper: #ffffff;
+    --hairline: rgba(20, 20, 20, 0.13);
+    --hairline-strong: rgba(20, 20, 20, 0.26);
+    --wash: rgba(194, 65, 12, 0.05);
+    --accent-ink: #c2410c;
+    --shadow-card: 0 1px 2px rgba(20, 20, 20, 0.03), 0 16px 32px -26px rgba(20, 20, 20, 0.28);
   }
 
   .dark {
-    /* Already dark by default; kept for theme parity. */
-  }
-}
+    /* The same editorial system with the paper turned to graphite. */
+    --background: 24 12% 8%;
+    --foreground: 40 43% 96%;
+    --card: 24 10% 12%;
+    --card-foreground: 40 43% 96%;
+    --popover: 24 10% 12%;
+    --popover-foreground: 40 43% 96%;
+    --primary: 20 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 8% 18%;
+    --secondary-foreground: 40 43% 96%;
+    --muted: 24 8% 18%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 24 8% 20%;
+    --accent-foreground: 40 43% 96%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 24 8% 22%;
+    --input: 24 8% 22%;
+    --ring: 20 90% 55%;
+    --chart-1: 20 90% 55%;
+    --chart-2: 35 40% 62%;
+    --chart-3: 30 10% 65%;
+    --chart-4: 40 43% 96%;
+    --chart-5: 17 45% 48%;
+    --sidebar-background: 24 10% 12%;
+    --sidebar-foreground: 40 43% 96%;
+    --sidebar-primary: 20 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 8% 20%;
+    --sidebar-accent-foreground: 40 43% 96%;
+    --sidebar-border: 24 8% 22%;
+    --sidebar-ring: 20 90% 55%;
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+    --paper: #1c1917;
+    --hairline: rgba(251, 249, 245, 0.14);
+    --hairline-strong: rgba(251, 249, 245, 0.28);
+    --wash: rgba(249, 115, 22, 0.1);
+    --accent-ink: #f97316;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 36px -28px rgba(0, 0, 0, 0.85);
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
 
+  h1, h2, h3, h4 {
+    @apply font-heading font-extrabold tracking-tight;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   ::selection {
-    background: hsl(var(--primary) / 0.3);
-    color: white;
+    background: rgba(194, 65, 12, 0.2);
   }
 
   :focus-visible {
-    outline: 2px solid hsl(var(--primary));
+    outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
   }
 }
 
 @layer components {
-  .text-glow {
-    text-shadow: 0 0 24px hsl(var(--primary) / 0.45);
+  .shell {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
   }
 
-  .glass {
-    background: hsl(222 47% 8% / 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.8);
+  /* Tiny uppercase numerals and section labels */
+  .label-xs {
+    @apply text-[11px] font-medium uppercase tracking-[0.18em];
+    color: hsl(var(--muted-foreground));
   }
 
-  .grid-bg {
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.6) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.6) 1px, transparent 1px);
-    background-size: 48px 48px;
+  /* The one accent */
+  .text-accent {
+    color: var(--accent-ink);
   }
 
-  .gradient-fallback {
-    background:
-      radial-gradient(ellipse at 20% 10%, hsl(187 95% 43% / 0.18), transparent 50%),
-      radial-gradient(ellipse at 80% 90%, hsl(217 91% 60% / 0.18), transparent 50%),
-      #020617;
+  /* Flat paper panel */
+  .paper {
+    background-color: var(--paper);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-card);
+  }
+
+  .paper-flat {
+    background-color: var(--paper);
+    border: 1px solid var(--hairline);
+  }
+
+  /* Hover: lift two pixels, hairline turns orange */
+  .lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
+  }
+  .lift:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-ink);
+  }
+
+  /* Uppercase tag */
+  .chip {
+    @apply inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em];
+    border-color: var(--hairline);
+    color: hsl(var(--foreground) / 0.72);
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  .lift:hover .chip {
+    border-color: var(--accent-ink);
+    color: var(--accent-ink);
+  }
+}
+
+@layer utilities {
+  .animate-caret {
+    animation: caret 1s steps(1) infinite;
+  }
+}
+
+@keyframes caret {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .animate-caret {
+    animation: none;
+  }
+  .lift:hover {
+    transform: none;
   }
 }
